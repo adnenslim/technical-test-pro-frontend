@@ -4,7 +4,12 @@ import prisma from 'prisma/client';
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   switch (req.method) {
     case 'GET':
-      const appointments = await prisma.appointment.findMany();
+      const appointments = await prisma.appointment.findMany({
+        include: {
+          patient: true,
+          practitioner: true,
+        },
+      });
       res.status(200).json(appointments);
       break;
     case 'POST':
@@ -21,5 +26,16 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       });
       res.status(200).json(appointment);
       break;
+    case 'DELETE':
+      const { id } = JSON.parse(req.body);
+      const appointmentRemoved = await prisma.appointment.delete({
+        where: {
+          id,
+        },
+      });
+      res.status(200).json(appointmentRemoved);
+      break;
+    default:
+      res.status(405).json({ error: `method ${req.method} Not Allowed` });
   }
 };

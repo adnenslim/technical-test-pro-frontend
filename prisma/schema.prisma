@@ -15,6 +15,7 @@ model Practitioner {
   firstName   String
   lastName    String
   speciality  String
+  posts Appointment[]
 }
 
 model Patient {
@@ -22,11 +23,14 @@ model Patient {
   firstName   String
   lastName    String
   birthDate   DateTime
+  posts Appointment[]
 }
 
 model Appointment {
   id              Int  @default(autoincrement()) @id
-  patientId       Int
+  patient         Patient @relation(fields: [patientId], references: [id])
+  patientId       Int 
+  practitioner    Practitioner @relation(fields: [practitionerId], references: [id])
   practitionerId  Int
   startDate       DateTime
   endDate         DateTime

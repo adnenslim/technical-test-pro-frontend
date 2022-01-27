@@ -1,3 +1,6 @@
+@import 'components/appointment/appointment.scss';
+@import 'components/availability/availability.scss';
+
 /* ############################################################ */
 /* HTML Tag base */
 /* ############################################################ */
@@ -391,6 +394,11 @@ table {
 
   --color-blue-border: hsl(244, 22%, 61%);
   --color-blue-shadow: hsl(244, 100%, 94%);
+
+  --color-error: #f44336;
+  --color-btn-availability: #fcd8dd;
+  --color-btn-availability-selected: #f68092;
+  --color-border-availability: rgba(0, 0, 0, 0.24);
 }
 body {
   min-height: 100vh;
@@ -609,36 +617,6 @@ section {
     &:last-of-type {
       border-top: none;
     }
-  }
-}
-
-.appointment__form {
-  display: flex;
-  flex-direction: column;
-  form {
-    display: flex;
-    flex-direction: column;
-    & > div:not(.cta) {
-      display: flex;
-      align-items: center;
-      min-height: 48px;
-      > label {
-        display: grid;
-        grid-template-columns: 150px 300px;
-      }
-    }
-
-    ul {
-      display: flex;
-      justify-content: space-evenly;
-    }
-  }
-
-  .btn {
-    margin-top: 12px;
-  }
-  .cta {
-    align-self: center;
   }
 }
 

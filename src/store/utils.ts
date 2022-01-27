@@ -1,7 +1,10 @@
 export const parseIds = (data) => {
-  const idKeys = Object.keys(data).filter((key) => key.endsWith('Id'));
-  idKeys.forEach((key) => {
-    data[key] = parseInt(data[key]);
-  });
-  return data;
+  return Object.keys(data).reduce((acc, key) => {
+    if (key.endsWith('Id')) {
+      acc[key] = Number(data[key]);
+    } else {
+      acc[key] = data[key];
+    }
+    return acc;
+  }, {});
 };

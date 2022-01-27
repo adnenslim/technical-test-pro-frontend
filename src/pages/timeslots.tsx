@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getTimeSlots, timeslotsSelectors } from 'store/timeslots';
 
-const TimeSlotPage = () => {
+const useTimeslots = () => {
   const dispatch = useDispatch();
   const timeslots = useSelector((state) =>
     timeslotsSelectors.selectAll(state.timeslots),
@@ -15,7 +15,11 @@ const TimeSlotPage = () => {
   useEffect(() => {
     dispatch(getTimeSlots());
   }, []);
+  return timeslots;
+};
 
+const TimeSlotPage = () => {
+  const timeslots = useTimeslots();
   return (
     <div className="page">
       <section datacy="intro">

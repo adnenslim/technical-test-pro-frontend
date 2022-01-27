@@ -1,0 +1,52 @@
+.appointment__form {
+  display: flex;
+  flex-direction: column;
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0 0 0;
+    & > div:not(.cta) {
+      display: flex;
+      align-items: flex-start;
+      min-height: 48px;
+      /* > label {
+          display: grid;
+          grid-template-columns: 150px 300px;
+        } */
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+
+  .btn {
+    width: 300px;
+    background: var(--color-primary-alt);
+    opacity: 0.7;
+    margin-top: 10px;
+    box-shadow: none;
+    &:hover {
+      box-shadow: none;
+      background: var(--color-primary-alt);
+      opacity: 1;
+    }
+  }
+  .cta {
+    align-self: center;
+  }
+}
+
+.appointment__list {
+  .center {
+    margin: 0 auto;
+    display: table;
+    margin-bottom: 20px;
+  }
+  .delete {
+    color: var(--color-error);
+    border: 1px solid var(--color-error);
+    margin-top: 20px;
+  }
+}

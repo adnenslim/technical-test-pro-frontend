@@ -15,6 +15,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.60",
     "@prisma/cli": "^2.16.0",
     "@prisma/client": "2.16.0",
     "@reduxjs/toolkit": "^1.5.0",
@@ -23,8 +24,10 @@
     "express": "^4.17.1",
     "faker": "^5.3.1",
     "next": "10.0.6",
+    "notistack": "^2.0.3",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-hook-form": "^7.25.0",
     "react-redux": "^7.2.2",
     "redux": "^4.0.5",
     "sass": "^1.32.6"
