@@ -7,7 +7,7 @@
     "dev": "next dev",
     "dev:back": "SERVER_API_ENDPOINT=http://localhost:8080 next dev",
     "lint": "eslint --ext .tsx,.ts --fix src/",
-    "postinstall": "husky install && prisma generate",
+    "postinstall": "prisma generate && yarn seed-db",
     "start": "next start",
     "test": "cypress open",
     "seed-db": "ts-node --project tsconfig.script.json script.ts"
