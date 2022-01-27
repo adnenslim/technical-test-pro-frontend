@@ -7,10 +7,11 @@
     "dev": "next dev",
     "dev:back": "SERVER_API_ENDPOINT=http://localhost:8080 next dev",
     "lint": "eslint --ext .tsx,.ts --fix src/",
-    "postinstall": "prisma generate && yarn seed-db",
+    
     "start": "next start",
     "test": "cypress open",
-    "seed-db": "ts-node --project tsconfig.script.json script.ts"
+    "seed-db": "ts-node --project tsconfig.script.json script.ts",
+    "vercel-build": "prisma generate && prisma migrate deploy && yarn seed-db && next build",
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
